@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Metadata-Service
+  data:
+    mongodb:
+      uri: ${MONGO_URI:}
+      database: NotificationService
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/} #
+#  instance:
+#    hostname: localhost
+server:
+  port: ${PORT:8083}
+
+ignite:
+  cluster:
+    addresses: ${IGNITE_NODE_IPS:localhost:10800}  # this is mandatory property!
+  cache:
+    name: ${IGNITE_CACHE_NAME:c1}
